@@ -1,0 +1,162 @@
+/* ═══════════════════════════════════════════════
+   AI COACH — ANIMATIONS
+═══════════════════════════════════════════════ */
+
+// ── Particles ──────────────────────────────────
+(function generateParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+  const count = 30;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const x = Math.random() * 100;
+    const dur = 6 + Math.random() * 8;
+    const delay = Math.random() * 10;
+    const size = 2 + Math.random() * 4;
+    p.style.cssText = `
+      --x: ${x}%;
+      --dur: ${dur}s;
+      --delay: -${delay}s;
+      width: ${size}px;
+      height: ${size}px;
+      opacity: ${0.3 + Math.random() * 0.5};
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ── Scroll Reveal ──────────────────────────────
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+);
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── Animated Counters ──────────────────────────
+function animateCounter(el) {
+  const target = el.dataset.target;
+  const isFloat = target.includes('.');
+  const numTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
+  const suffix = target.replace(/[0-9.]/g, '');
+  const duration = 1800;
+  const start = performance.now();
+
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = eased * numTarget;
+    el.textContent = isFloat
+      ? current.toFixed(1) + suffix
+      : Math.round(current).toLocaleString('fr-FR') + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = true;
+        animateCounter(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── Staggered children ─────────────────────────
+const staggerObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const children = entry.target.querySelectorAll(':scope > *');
+        children.forEach((child, i) => {
+          child.style.transitionDelay = `${i * 0.08}s`;
+          child.classList.add('visible');
+        });
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll('.stagger-children').forEach(el => staggerObserver.observe(el));
+
+// ── Parallax hero orbs ─────────────────────────
+let rafId;
+window.addEventListener('mousemove', (e) => {
+  if (rafId) return;
+  rafId = requestAnimationFrame(() => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    const orb1 = document.querySelector('.orb-1');
+    const orb2 = document.querySelector('.orb-2');
+    const orb3 = document.querySelector('.orb-3');
+    if (orb1) orb1.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+    if (orb2) orb2.style.transform = `translate(${-x * 0.3}px, ${-y * 0.3}px)`;
+    if (orb3) orb3.style.transform = `translate(${x * 0.8}px, ${-y * 0.8}px)`;
+    rafId = null;
+  });
+});
+
+// ── Smooth number tick in stat cards ──────────────
+function setupStatCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = true;
+          const el = entry.target;
+          el.style.animation = 'none';
+          el.offsetHeight; // reflow
+          el.style.animation = '';
+          // Add a quick flash effect
+          el.style.color = 'var(--orange)';
+          setTimeout(() => { el.style.color = ''; }, 600);
+        }
+      });
+    },
+    { threshold: 0.8 }
+  );
+  statNumbers.forEach(el => statObserver.observe(el));
+}
+
+setupStatCounters();
+
+// ── Module cards tilt effect ───────────────────
+document.querySelectorAll('.module-card, .stat-card, .founder-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.4s ease';
+  });
+
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.1s ease';
+  });
+});
+
+// ── Page load stagger for hero ─────────────────
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
