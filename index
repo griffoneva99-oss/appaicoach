@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI COACH — Votre coach pour toute la famille</title>
+  <meta name="description" content="AI COACH, le premier assistant sportif intelligent français pour accompagner toute la famille dans sa pratique sportive quotidienne. 5 à 75 ans, chacun à son rythme." />
+  <meta name="keywords" content="ai coach, sport famille, application sportive, coach IA, sport enfants, sport famille France" />
+  <meta property="og:title" content="AI COACH — Votre coach pour toute la famille" />
+  <meta property="og:description" content="Ensemble, chacun à son rythme. Le coach intelligent pour toute la famille." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAV
+  ══════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo.png" alt="AI COACH Logo" onerror="this.style.display='none'" />
+        AI COACH
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#pricing">Nos abonnements</a></li>
+        <li><a href="#events">Nos événements</a></li>
+        <li><a href="#founders">Qui sommes-nous</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#download" class="nav-cta">📲 Télécharger</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Lancement — Septembre 2026
+          </div>
+
+          <h1 class="hero-title">
+            Ensemble,<br/>
+            chacun à son<br/>
+            <span>rythme.</span>
+          </h1>
+
+          <p class="hero-tagline">
+            AI COACH est le premier assistant sportif intelligent français conçu pour toute la famille.
+            De 5 à 75 ans, chaque membre trouve sa place.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn-hero-primary">
+              🚀 Télécharger gratuitement
+            </a>
+            <a href="#app" class="btn-hero-secondary">
+              ▶ Découvrir l'app
+            </a>
+          </div>
+
+          <div class="hero-stores">
+            <a href="#download" class="store-badge">
+              <span class="store-icon">🍎</span>
+              <div>
+                <span class="store-text-sm">Disponible sur</span>
+                <span class="store-text-lg">App Store</span>
+              </div>
+            </a>
+            <a href="#download" class="store-badge">
+              <span class="store-icon">▶</span>
+              <div>
+                <span class="store-text-sm">Disponible sur</span>
+                <span class="store-text-lg">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-phone-wrap">
+            <img class="hero-phone"
+                 src="assets/app-screen.png"
+                 alt="Application AI COACH"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22520%22 viewBox=%220 0 280 520%22><rect width=%22280%22 height=%22520%22 rx=%2230%22 fill=%22rgba(255,255,255,0.12)%22 stroke=%22rgba(255,255,255,0.25)%22 stroke-width=%221%22/><rect x=%2280%22 y=%2220%22 width=%22120%22 height=%2210%22 rx=%225%22 fill=%22rgba(255,255,255,0.15)%22/><circle cx=%22140%22 cy=%22180%22 r=%2260%22 fill=%22rgba(255,107,43,0.3)%22/><text x=%22140%22 y=%22188%22 text-anchor=%22middle%22 font-size=%2240%22>🏃</text><text x=%22140%22 y=%22280%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2214%22 font-weight=%22bold%22>AI COACH</text><text x=%22140%22 y=%22310%22 text-anchor=%22middle%22 fill=%22rgba(255,255,255,0.6)%22 font-size=%2211%22>Votre coach intelligent</text></svg>'" />
+
+            <div class="hero-bubble bubble-1">
+              <div class="bubble-icon">🏃</div>
+              <div class="bubble-text">
+                <span class="bubble-label">Activité du jour</span>
+                <span class="bubble-val">Randonnée famille · 8 km</span>
+              </div>
+            </div>
+
+            <div class="hero-bubble bubble-2">
+              <div class="bubble-icon">🥗</div>
+              <div class="bubble-text">
+                <span class="bubble-label">Nutrition</span>
+                <span class="bubble-val">Snack préparé · +67 kcal</span>
+              </div>
+            </div>
+
+            <div class="hero-bubble bubble-3">
+              <div class="bubble-icon">🏆</div>
+              <div class="bubble-text">
+                <span class="bubble-label">Défi complété !</span>
+                <span class="bubble-val">Famille × 3 activités</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       STATS
+  ══════════════════════════════ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon">👨‍👩‍👧‍👦</div>
+          <div class="stat-number">120<span>K</span></div>
+          <div class="stat-label">Familles actives (Family Sport+)</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-icon">🎂</div>
+          <div class="stat-number">5<span>–</span>75</div>
+          <div class="stat-label">Ans — coaching multi-générations</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-icon">⚽</div>
+          <div class="stat-number">15<span>+</span></div>
+          <div class="stat-label">Sports disponibles au lancement</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-number">500<span>K</span></div>
+          <div class="stat-label">Familles visées d'ici 2027</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       APP DETAILS
+  ══════════════════════════════ -->
+  <section id="app">
+    <div class="container">
+      <div class="app-header reveal">
+        <div class="section-tag">📱 L'application</div>
+        <h2 class="section-title">
+          Un seul coach.<br/>
+          <span>Toute la famille.</span>
+        </h2>
+        <p class="section-sub">
+          AI COACH combine coaching personnalisé, nutrition, planification et gamification
+          dans une seule expérience pensée pour chaque profil familial.
+        </p>
+      </div>
+
+      <div class="modules-grid">
+
+        <div class="module-card reveal">
+          <div class="module-top">
+            <div class="module-icon blue">🎯</div>
+            <div class="module-title">Coach personnalisé multi-âges</div>
+          </div>
+          <p class="module-desc">
+            Des plans d'entraînement adaptés à chaque membre, de 5 à 75 ans.
+            L'IA ajuste la difficulté en temps réel selon les capacités de chacun.
+          </p>
+          <div class="module-features">
+            <span class="module-feat">Plans sur mesure selon âge & niveau</span>
+            <span class="module-feat">Défis famille & challenges intergénérationnels</span>
+            <span class="module-feat">Suivi de progression individuel</span>
+            <span class="module-feat">Coaching vocal mains-libres pendant l'effort</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal reveal-delay-1">
+          <div class="module-top">
+            <div class="module-icon orange">📅</div>
+            <div class="module-title">Planificateur d'activités familiales</div>
+          </div>
+          <p class="module-desc">
+            AI COACH organise tout : météo, niveaux, disponibilités et trajets.
+            Vous n'avez plus qu'à y aller ensemble.
+          </p>
+          <div class="module-features">
+            <span class="module-feat">Suggestions adaptées selon la météo</span>
+            <span class="module-feat">Coordination avec les agendas famille</span>
+            <span class="module-feat">Terrains & équipements à proximité</span>
+            <span class="module-feat">Mode offline pour les activités outdoor</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal reveal-delay-2">
+          <div class="module-top">
+            <div class="module-icon green">🥗</div>
+            <div class="module-title">Expert santé & nutrition sportive</div>
+          </div>
+          <p class="module-desc">
+            Conseils nutritionnels pré/post effort, prévention des blessures,
+            suivi hydratation. Basé sur les données INSEP et l'ANSES.
+          </p>
+          <div class="module-features">
+            <span class="module-feat">Recettes & conseils nutrition adaptés</span>
+            <span class="module-feat">Prévention blessures & échauffements</span>
+            <span class="module-feat">Suivi hydratation & récupération</span>
+            <span class="module-feat">Alertes santé personnalisées</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal reveal-delay-3">
+          <div class="module-top">
+            <div class="module-icon purple">🏆</div>
+            <div class="module-title">Gamification & communauté</div>
+          </div>
+          <p class="module-desc">
+            Défis collectifs, badges, récompenses partagées.
+            La motivation devient familiale — et contagieuse.
+          </p>
+          <div class="module-features">
+            <span class="module-feat">Système de récompenses familiales</span>
+            <span class="module-feat">Défis & compétitions amicales</span>
+            <span class="module-feat">Partage d'exploits & moments sportifs</span>
+            <span class="module-feat">Communauté de familles locales</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOUNDERS
+  ══════════════════════════════ -->
+  <section id="founders">
+    <div class="container">
+      <div class="founders-header reveal">
+        <div class="section-tag">👥 Qui sommes-nous</div>
+        <h2 class="section-title">
+          Fondés par la passion<br/>
+          du <span>sport & de la famille</span>
+        </h2>
+        <p class="section-sub">
+          Sport Family Connect est née en 2021 à Annecy de la conviction que le sport est
+          le meilleur vecteur de lien familial.
+        </p>
+      </div>
+
+      <div class="founders-grid">
+
+        <!-- Amélie -->
+        <div class="founder-card reveal">
+          <div class="founder-img-wrap" style="background: linear-gradient(135deg, #0F3A9A, #1A56DB);">
+            <span class="founder-sport-badge">🎿 Ex-Olympique</span>
+            <div class="founder-avatar-placeholder">🏆</div>
+          </div>
+          <div class="founder-body">
+            <div class="founder-name">Amélie Dubourg</div>
+            <div class="founder-role">CEO & Co-fondatrice</div>
+            <p class="founder-bio">
+              Ancienne athlète olympique en ski alpin, MBA HEC (2019).
+              Après une carrière d'élite, Amélie a fait le constat que les outils sportifs
+              numériques ignoraient complètement la dimension familiale et intergénérationnelle.
+              Elle co-fonde Sport Family Connect en 2021 avec une vision claire :
+              démocratiser le sport en famille pour toutes les générations.
+            </p>
+            <blockquote class="founder-quote">
+              « J'ai connu l'excellence individuelle. Ce qui m'a vraiment construite,
+              c'est le sport partagé avec ma famille. C'est ça qu'on veut redonner
+              à toutes les familles françaises. »
+            </blockquote>
+            <div class="founder-values">
+              <span class="value-tag">Sport pour tous</span>
+              <span class="value-tag">Inclusion</span>
+              <span class="value-tag">Excellence partagée</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maxime -->
+        <div class="founder-card reveal reveal-delay-2">
+          <div class="founder-img-wrap" style="background: linear-gradient(135deg, #1A2F5A, #FF6B2B);">
+            <span class="founder-sport-badge">💻 Ex-Strava</span>
+            <div class="founder-avatar-placeholder">⚙️</div>
+          </div>
+          <div class="founder-body">
+            <div class="founder-name">Maxime Leroy</div>
+            <div class="founder-role">CTO & Co-fondateur</div>
+            <p class="founder-bio">
+              41 ans, ancien Lead Developer chez Strava — la référence mondiale
+              du sport connecté. Maxime a façonné les algorithmes qui ont transformé
+              la façon dont des millions de sportifs suivent leurs performances.
+              Il applique cette expertise à un défi inédit : créer une IA sportive
+              multi-profils, adaptative et 100 % française.
+            </p>
+            <blockquote class="founder-quote">
+              « La technologie doit s'effacer derrière l'humain. Le meilleur
+              algorithme, c'est celui qu'on ne voit pas — juste le résultat :
+              une famille qui bouge, ensemble, avec le sourire. »
+            </blockquote>
+            <div class="founder-values">
+              <span class="value-tag">Innovation</span>
+              <span class="value-tag">IA responsable</span>
+              <span class="value-tag">Tech au service de l'humain</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Valeurs -->
+      <div class="reveal" style="margin-top: 60px;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+          <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🤸</div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--dark);">Sport pour tous</div>
+          </div>
+          <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 8px;">😄</div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--dark);">Plaisir & convivialité</div>
+          </div>
+          <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🌱</div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--dark);">Innovation durable</div>
+          </div>
+          <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 8px;">💪</div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--dark);">Dépassement collectif</div>
+          </div>
+          <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 8px;">❤️</div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: .85rem; color: var(--dark);">Santé holistique</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       PRICING
+  ══════════════════════════════ -->
+  <section id="pricing">
+    <div class="pricing-bg"></div>
+    <div class="container">
+      <div class="pricing-header reveal">
+        <div class="section-tag">💳 Nos abonnements</div>
+        <h2 class="section-title">Un tarif pour chaque famille</h2>
+        <p class="section-sub">
+          Commencez gratuitement, évoluez à votre rythme.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- FREE -->
+        <div class="price-card reveal">
+          <div class="price-plan">Gratuit</div>
+          <div class="price-amount">
+            <span class="price-value">0</span>
+            <span class="price-currency">€</span>
+          </div>
+          <div class="price-period">pour toujours</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              1 sport au choix
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              2 profils utilisateurs
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Programmes de base
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Planificateur simplifié
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Suivi basique des activités
+            </li>
+          </ul>
+          <a href="#download" class="price-btn price-btn-outline">Commencer gratuitement</a>
+        </div>
+
+        <!-- FAMILY ACTIVE -->
+        <div class="price-card featured reveal reveal-delay-1">
+          <div class="featured-badge">⭐ Populaire</div>
+          <div class="price-plan">Family Active</div>
+          <div class="price-amount">
+            <span class="price-currency">€</span>
+            <span class="price-value">14,90</span>
+          </div>
+          <div class="price-period">par mois · 6 profils famille</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Sports illimités
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              6 profils familiaux (5–75 ans)
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Coaching IA personnalisé
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Nutrition & recettes sport
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Défis famille & gamification
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Planificateur intelligent
+            </li>
+          </ul>
+          <a href="#download" class="price-btn price-btn-filled">Choisir Family Active</a>
+        </div>
+
+        <!-- FAMILY CHAMPION -->
+        <div class="price-card reveal reveal-delay-2">
+          <div class="price-plan">Family Champion</div>
+          <div class="price-amount">
+            <span class="price-currency">€</span>
+            <span class="price-value">24,90</span>
+          </div>
+          <div class="price-period">par mois · tout inclus</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Tout Family Active inclus
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Coaching personnalisé avancé
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Compatibilité matériel connecté
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Consultations coachs sportifs
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Suivi nutritionniste intégré
+            </li>
+            <li class="price-feat">
+              <span class="feat-check">✓</span>
+              Accès prioritaire aux festivals
+            </li>
+          </ul>
+          <a href="#download" class="price-btn price-btn-outline">Choisir Champion</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       EVENTS
+  ══════════════════════════════ -->
+  <section id="events">
+    <div class="container">
+      <div class="events-header">
+        <div>
+          <div class="section-tag reveal">🎉 Nos événements</div>
+          <h2 class="section-title reveal">Le Festival<br/><span>AI COACH 2026</span></h2>
+        </div>
+        <a href="#contact" class="btn-secondary reveal">Voir tous les événements</a>
+      </div>
+
+      <div class="event-main reveal">
+        <div class="event-img-wrap">
+          <img src="assets/festival.jpg"
+               alt="Festival AI COACH 2026"
+               onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22><rect width=%22600%22 height=%22400%22 fill=%22%231A56DB%22/><text x=%22300%22 y=%22180%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22>🏃‍♀️</text><text x=%22300%22 y=%22240%22 text-anchor=%22middle%22 fill=%22rgba(255,255,255,0.8)%22 font-size=%2220%22>Festival AI COACH 2026</text></svg>'" />
+        </div>
+        <div class="event-body">
+          <div class="event-date">📅 Samedi 29 août 2026</div>
+          <h3 class="event-title">
+            Festival AI COACH —<br/>
+            <span>"Ensemble, chacun à son rythme"</span>
+          </h3>
+          <p class="event-desc">
+            Une journée entière au Parc de Gerland à Lyon pour bouger, découvrir,
+            apprendre et partager. Activités sportives pour tous les âges et tous les niveaux,
+            ateliers nutrition, démonstrations IA et animations famille.
+            Gratuit sur inscription via l'application.
+          </p>
+          <div class="event-metas">
+            <div class="event-meta">
+              <span class="event-meta-icon">📍</span>
+              Parc de Gerland, Lyon
+            </div>
+            <div class="event-meta">
+              <span class="event-meta-icon">🕘</span>
+              9h00 – 18h00
+            </div>
+            <div class="event-meta">
+              <span class="event-meta-icon">👨‍👩‍👧</span>
+              3 500 participants attendus · Gratuit sur inscription
+            </div>
+          </div>
+          <div class="activities-grid">
+            <span class="activity-tag">🏃 Activités sportives</span>
+            <span class="activity-tag">🥗 Nutrition & bien-être</span>
+            <span class="activity-tag">🤖 Expertise IA & coaching</span>
+            <span class="activity-tag">👨‍👩‍👧 Animations famille</span>
+            <span class="activity-tag">🧘 Yoga & mobilité</span>
+            <span class="activity-tag">🎯 Tir à l'arc</span>
+            <span class="activity-tag">🚴 Vélo & VTT</span>
+            <span class="activity-tag">🏆 Défis inter-familles</span>
+          </div>
+          <div style="margin-top: 28px;">
+            <a href="#download" class="btn-primary">S'inscrire gratuitement →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <div class="section-tag">💬 Ils nous font confiance</div>
+        <h2 class="section-title">
+          Des familles qui <span>bougent</span><br/>avec AI COACH
+        </h2>
+        <p class="section-sub">
+          Membres de notre communauté & bêta-testeurs de l'application.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testi-card reveal">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            On avait du mal à trouver des activités adaptées à nos trois enfants (6, 11 et 14 ans)
+            en même temps. AI COACH nous propose des sorties où chacun a son niveau et sa mission.
+            Le samedi est devenu notre moment sacré.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">ÉM</div>
+            <div>
+              <div class="testi-name">Élodie M.</div>
+              <div class="testi-info">Mère de 3 enfants · Lyon</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            J'avais arrêté le sport depuis 5 ans. Mon fils de 13 ans m'a mis au défi via l'app.
+            En deux mois, j'ai couru mon premier 10 km. Et lui a eu ses premiers vrais résultats.
+            C'est magique ce qu'ils ont fait.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">TL</div>
+            <div>
+              <div class="testi-name">Thomas L.</div>
+              <div class="testi-info">Père de famille · Grenoble</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Mes petits-enfants voulaient faire de la randonnée avec moi mais je ne savais pas
+            comment adapter le tracé. AI COACH m'a proposé un parcours parfait : pas trop long,
+            avec des arrêts jeux. Je suis à nouveau dans leur vie active.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">JD</div>
+            <div>
+              <div class="testi-name">Jean D.</div>
+              <div class="testi-info">Grand-père · Annecy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            La section nutrition est bluffante. Des recettes simples, pensées pour les efforts
+            qu'on vient de faire, adaptées aux goûts de chacun. Ma fille de 8 ans adore
+            préparer le snack post-balade.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sophie R.</div>
+              <div class="testi-info">Mère & nutritionniste · Paris</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Ce qui m'a convaincu : c'est 100% français, les données restent en France,
+            et l'IA ne prend jamais de décisions à ma place. Elle suggère, j'arbitre.
+            Exactement ce que j'attendais.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">PB</div>
+            <div>
+              <div class="testi-name">Pierre B.</div>
+              <div class="testi-info">Papa tech-sceptique converti · Bordeaux</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Les défis inter-familles sont géniaux. On s'est retrouvés en compétition amicale
+            avec nos voisins sur le nombre de kilomètres parcourus. Ça nous a fait bouger
+            plus en un mois qu'en une année entière.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">MV</div>
+            <div>
+              <div class="testi-name">Marie V.</div>
+              <div class="testi-info">Famille active · Toulouse</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       CONTACT
+  ══════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-tag reveal">✉️ Contact</div>
+          <h2 class="section-title reveal">Parlons de votre <span>famille active</span></h2>
+          <p class="section-sub reveal">
+            Une question sur l'application, un partenariat, une demande presse ?
+            L'équipe AI COACH vous répond sous 24h.
+          </p>
+
+          <div class="contact-info" style="margin-top: 32px;">
+            <div class="contact-card reveal">
+              <div class="contact-card-icon">📍</div>
+              <div>
+                <div class="contact-card-title">Siège social</div>
+                <div class="contact-card-val">Sport Family Connect · Annecy (74), France</div>
+              </div>
+            </div>
+            <div class="contact-card reveal reveal-delay-1">
+              <div class="contact-card-icon">📧</div>
+              <div>
+                <div class="contact-card-title">Email</div>
+                <div class="contact-card-val">contact@aicoach-app.fr</div>
+              </div>
+            </div>
+            <div class="contact-card reveal reveal-delay-2">
+              <div class="contact-card-icon">🤝</div>
+              <div>
+                <div class="contact-card-title">Partenariats & presse</div>
+                <div class="contact-card-val">presse@aicoach-app.fr</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; margin-bottom: 24px; color: var(--dark);">Envoyez-nous un message</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Prénom</label>
+              <input class="form-input" type="text" placeholder="Marie" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nom</label>
+              <input class="form-input" type="text" placeholder="Dupont" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" placeholder="marie@exemple.fr" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Sujet</label>
+            <select class="form-select">
+              <option value="">Sélectionnez un sujet</option>
+              <option>Question sur l'application</option>
+              <option>Partenariat / B2B</option>
+              <option>Demande presse</option>
+              <option>Feedback utilisateur</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Votre message..."></textarea>
+          </div>
+
+          <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="handleFormSubmit(event)">
+            Envoyer le message ✉️
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       DOWNLOAD CTA
+  ══════════════════════════════ -->
+  <section id="download">
+    <div class="download-bg"></div>
+    <div class="container">
+      <div class="download-content reveal">
+        <div class="section-tag" style="background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); margin: 0 auto 20px;">
+          📲 Disponible maintenant
+        </div>
+        <h2 class="download-title">
+          Prêts à bouger<br/>
+          <span>ensemble ?</span>
+        </h2>
+        <p class="download-sub">
+          Téléchargez AI COACH gratuitement.
+          Votre premier programme famille est prêt en 2 minutes.
+        </p>
+
+        <div class="download-stores">
+          <a href="#" class="dl-store">
+            <span class="dl-store-icon">🍎</span>
+            <div class="dl-store-txt">
+              <span class="dl-sm">Télécharger sur</span>
+              <span class="dl-lg">App Store</span>
+            </div>
+          </a>
+          <a href="#" class="dl-store">
+            <span class="dl-store-icon">▶</span>
+            <div class="dl-store-txt">
+              <span class="dl-sm">Disponible sur</span>
+              <span class="dl-lg">Google Play</span>
+            </div>
+          </a>
+          <a href="#" class="dl-store">
+            <span class="dl-store-icon">📱</span>
+            <div class="dl-store-txt">
+              <span class="dl-sm">Explorer sur</span>
+              <span class="dl-lg">AppGallery</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo.png" alt="AI COACH" onerror="this.style.display='none'" />
+            AI COACH
+          </div>
+          <p class="footer-desc">
+            Le premier assistant sportif intelligent français pour toute la famille.
+            Sport Family Connect © 2026 — Annecy, France.
+            Hébergement certifié RGPD & ISO 27001.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+            <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Application</div>
+          <ul class="footer-links">
+            <li><a href="#app">Fonctionnalités</a></li>
+            <li><a href="#pricing">Abonnements</a></li>
+            <li><a href="#download">Télécharger</a></li>
+            <li><a href="#">Nouveautés</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Entreprise</div>
+          <ul class="footer-links">
+            <li><a href="#founders">Notre équipe</a></li>
+            <li><a href="#events">Événements</a></li>
+            <li><a href="#">Presse</a></li>
+            <li><a href="#">Investisseurs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Centre d'aide</a></li>
+            <li><a href="#">Communauté</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Sport Family Connect SAS — Tous droits réservés</span>
+        <div class="footer-bottom-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">RGPD</a>
+          <a href="#">CGU</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animation.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
