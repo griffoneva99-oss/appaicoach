@@ -1,0 +1,235 @@
+/* ═══════════════════════════════════════════════
+   AI COACH — MAIN JS
+═══════════════════════════════════════════════ */
+
+// ── Navbar scroll ──────────────────────────────
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// ── Hamburger menu ─────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+
+hamburger?.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  const spans = hamburger.querySelectorAll('span');
+  if (isOpen) {
+    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+  } else {
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
+});
+
+// Close menu on link click
+navLinks?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    const spans = hamburger?.querySelectorAll('span');
+    if (spans) {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!navbar.contains(e.target)) {
+    navLinks?.classList.remove('open');
+  }
+});
+
+// ── Smooth scroll ──────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    const offset = 80;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// ── Active nav link on scroll ──────────────────
+const sections = document.querySelectorAll('section[id]');
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
+
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── Form submission ────────────────────────────
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn = e.target;
+  const originalText = btn.innerHTML;
+
+  btn.innerHTML = '⏳ Envoi en cours...';
+  btn.disabled = true;
+  btn.style.opacity = '.7';
+
+  setTimeout(() => {
+    btn.innerHTML = '✅ Message envoyé !';
+    btn.style.background = '#22C55E';
+
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.style.background = '';
+    }, 3000);
+  }, 1500);
+}
+
+// ── Pricing hover glow ─────────────────────────
+document.querySelectorAll('.price-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.background = card.classList.contains('featured')
+      ? `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,.15), transparent 70%), var(--orange)`
+      : `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,.08), transparent 60%)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.background = '';
+  });
+});
+
+// ── Testimonials auto-highlight ────────────────
+let currentTesti = 0;
+const testiCards = document.querySelectorAll('.testi-card');
+
+function highlightTesti() {
+  testiCards.forEach((c, i) => {
+    c.style.transform = i === currentTesti ? 'translateY(-8px) scale(1.01)' : '';
+    c.style.borderColor = i === currentTesti ? 'var(--blue)' : '';
+    c.style.boxShadow = i === currentTesti ? 'var(--shadow-md)' : '';
+  });
+  currentTesti = (currentTesti + 1) % testiCards.length;
+}
+
+if (testiCards.length > 0) {
+  const testiInterval = setInterval(highlightTesti, 3000);
+  testiCards.forEach(c => {
+    c.addEventListener('mouseenter', () => clearInterval(testiInterval));
+  });
+}
+
+// ── Scroll progress indicator ─────────────────
+const progressBar = document.createElement('div');
+progressBar.style.cssText = `
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  z-index: 9999;
+  width: 0%;
+  transition: width .1s linear;
+  pointer-events: none;
+`;
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = `${(scrolled / total) * 100}%`;
+}, { passive: true });
+
+// ── Back to top ────────────────────────────────
+const backTop = document.createElement('button');
+backTop.innerHTML = '↑';
+backTop.setAttribute('aria-label', 'Retour en haut');
+backTop.style.cssText = `
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 48px; height: 48px;
+  background: var(--blue);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(26,86,219,.4);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all .3s ease;
+  cursor: pointer;
+  border: none;
+`;
+document.body.appendChild(backTop);
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    backTop.style.opacity = '1';
+    backTop.style.transform = 'translateY(0)';
+  } else {
+    backTop.style.opacity = '0';
+    backTop.style.transform = 'translateY(16px)';
+  }
+}, { passive: true });
+
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+backTop.addEventListener('mouseenter', () => {
+  backTop.style.background = 'var(--orange)';
+  backTop.style.transform = 'translateY(-4px)';
+});
+
+backTop.addEventListener('mouseleave', () => {
+  backTop.style.background = 'var(--blue)';
+  backTop.style.transform = window.scrollY > 600 ? 'translateY(0)' : 'translateY(16px)';
+});
+
+// ── Preload logo fallback ──────────────────────
+document.querySelectorAll('img[src="assets/logo.png"]').forEach(img => {
+  img.addEventListener('error', () => {
+    img.style.display = 'none';
+  });
+});
+
+// ── Nav active styles (CSS injection) ─────────
+const style = document.createElement('style');
+style.textContent = `
+  .nav-links a.active {
+    color: var(--blue) !important;
+    background: var(--blue-light) !important;
+  }
+`;
+document.head.appendChild(style);
+
+console.log('%c AI COACH 🚀', 'color: #1A56DB; font-size: 24px; font-weight: bold;');
+console.log('%c Ensemble, chacun à son rythme.', 'color: #FF6B2B; font-size: 14px;');
